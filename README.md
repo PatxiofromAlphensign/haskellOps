@@ -1,4 +1,4 @@
-[haskell.png](./haskell.svg)
+![haskell.png](./haskell.svg)
 
 Notes
 -----
@@ -8,6 +8,7 @@ look out on `no Instacne arising errors`
 
 #### possible deducable bounds
 | issue | fix |
+|-------|-----|
 | parameter passing  to <function> has no Instance arising | instance () | 
 | <function> has no Instance arising | none | 
 
