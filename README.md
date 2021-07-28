@@ -17,9 +17,11 @@ goals
 ======
 * declutter/organize code to fit a multi-module paradigm
 * make cabal builds in virutal envs
+* make template type predicates (like what `basefunctor` in [TH.hs](./recursion-schemes/src/Data/Functor/Foldable/TH.hs))
 
 refs
 ====
 
 [recurisonSchemes](https://github.com/recursion-schemes/recursion-schemes.git)
+
 [write yourself a Scheme in 48 hours](https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours)

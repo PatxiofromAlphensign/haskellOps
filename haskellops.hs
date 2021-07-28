@@ -5,8 +5,10 @@
 module Main where
 
 import qualified Data.List as DList
-
+import Language.Haskell.TH.Lib (DecsQ)
 data F a = T a 
+data F' a = F {f :: a -> a}
+
 
 class Mnd a b where 
 	mf :: (Monad m)=>a -> m b -- figure out why recursive type defination
@@ -44,11 +46,22 @@ testx :: (Monad m)=>m (m Int)
 testx = test0 (return 1) (return 2)
 testx' = test [1..5]
 
+makeBaseFunctor :: (Ord a, Num a, Enum a)=> a -> [a]
+makeBaseFunctor a  = map ((\f s -> if s > 9 then f (s-1) else s ) (\f->f*2)) [1..a]
+
+basefunctor =  makeBaseFunctor 10
+-- template args 
+
+based :: a -> DecsQ
+based  a | a<10 =  based (a+1) | otherwise = a
+
+
+
 b::(Mnd m a, Monad md)=>m->md a -- can not deduce class
 b x = mf x 
 
 x = map intToNum' [1..5]
 --x' = intToNum 5 (return 1)
 
-main = print 1
+main = print $ based 1
 
