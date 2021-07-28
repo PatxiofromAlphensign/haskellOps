@@ -1,0 +1,29 @@
+name:          tests
+--category:      Control, Recursion
+version:       5.2.2.1
+cabal-version: 1.18
+
+build-type:    Simple
+extra-doc-files: docs/github-compression.png
+extra-source-files: CHANGELOG.markdown .gitignore README.markdown include/recursion-schemes-common.h
+
+
+library
+	other-extensions:
+	    CPP
+	    TypeFamilies
+	    Rank2Types
+	    FlexibleContexts
+	    FlexibleInstances
+	    GADTs
+	    StandaloneDeriving
+	    UndecidableInstances
+
+	build-depends:
+	  base,
+	  template-haskell
+
+	hs-source-dirs: src
+
+	exposed-modules:
+		Haskellops

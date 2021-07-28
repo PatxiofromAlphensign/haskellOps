@@ -2,7 +2,7 @@
 {-# LANGUAGE ConstrainedClassMethods #-}
 {-# LANGUAGE MultiParamTypeClasses,FlexibleInstances #-} 
 
-module Main where
+module Haskellops where
 
 import qualified Data.List as DList
 import Language.Haskell.TH.Lib (DecsQ)
@@ -63,5 +63,4 @@ b x = mf x
 x = map intToNum' [1..5]
 --x' = intToNum 5 (return 1)
 
-main = print $ based 1
 
